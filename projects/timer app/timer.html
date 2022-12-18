@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <Header>COUNTDOWN TIMER
+            <div onclick="location.href = '../../index.html';" class="model-close-btn">&times;</div>
+    </Header>
+    
+    <nav>
+        <ul class="main-nav">
+            <li><img id="Uhrzeit" src="./Icons/Uhrzeit.svg"><a href="uhr.html">Uhrzeit</a></li>
+            <li><img id="Stoppuhr" src="./Icons/stoppUhr_white.png"><a href="stopp.html">Stoppuhr</a></li>
+            <li><img src="./Icons/wecker_icon.png"><a href="wecker.html">Wecker</a></li>
+            <li><img id="Pomodoro" src="./Icons/Pomodoro_icon.png"><a href="index.html">Pomodoro</a></li>
+            <li><img id="timer" src="./Icons/Timer_icon.png"><a href="timer.html">Timer</a></li>
+        </ul>
+    </nav>
+
+    <div class="timer_info_display">
+        <span>Stunden</span>
+        <span>Minuten</span>
+        <span>Sekunden</span>
+    </div>
+
+    <div class="uhrzeit">
+        <span id="timer_stunden_display">00</span>:<span id="timer_minuten_display">10</span>:<span id="timer_sekunden_display">00</span>
+    </div>
+
+    <div class="buttons timer_btn">
+            <div class="start">
+                Start</div>
+            <div class="stopp">
+                Stopp</div>
+            <div class="reset">
+                Reset</div>
+            <div class="edit">
+                Bearbeiten
+                </div>
+    </div>
+
+    <div class="settings timer_settings">
+        <div class="model-backdrop"></div>
+        <div class="model-body">
+                <span class="settings-header" ><h1>Bearbeiten</h1></span>
+                <span class="timer_stunden_alert alert">Gib einen Wert größer 0 und kleiner 100 ein!</span>
+                <span class="timer_minuten_alert alert">Gib einen Wert größer 0 und kleiner 60 ein!</span>
+                <span class="timer_sekunden_alert alert">Gib einen Wert größer 0 und kleiner 60 ein!</span>
+                
+                <form>
+                    <label for="stunden">Stunden:</label>
+                    <input id="timer_stunden" type="number" name="pDauer" value="0"><br><br>
+    
+                    <label for="minuten">Minuten:</label>
+                    <input id="timer_minuten" type="number" name="shortPause" value="10"><br><br>
+    
+                    <label for="sekunden">Sekunden:</label>
+                    <input id="timer_sekunden" type="number" name="longPause" value="0"><br><br>
+    
+                </form>
+                <button class="save">Anwenden</button>
+                <button class="close">Schließen</button>
+        </div>
+    
+    </div>
+</body>
+</html>

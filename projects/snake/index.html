@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <title>Snake Game</title>
+</head>
+<body>
+
+    <div onclick="location.href = '../../index.html';" class="model-close-btn">&times;</div>
+    
+    <div class="div-rotate div-rotate-size-8"></div>
+    <div class="div-rotate div-rotate-size-7"></div>
+    <div class="div-rotate div-rotate-size-6"></div>
+    <div class="div-rotate div-rotate-size-5"></div>
+    <div class="div-rotate div-rotate-size-4"></div>
+    <div class="div-rotate div-rotate-size-3"></div>
+    <div class="div-rotate div-rotate-size-2"></div>
+    <div class="div-rotate div-rotate-size-1"></div>
+    
+    <div class="triangle">
+        <div class="triangle-inner"></div>
+    </div>
+    <canvas  id="canvas" width="400" height="400"> </canvas>
+
+    <div class="desc-container">
+        <span id="start-desc">Press SPACE to start</span>
+    </div>
+
+    <div class="game-over-display">
+        <span id="score-display">Score: 5</span>
+        <span id="try-again-display">Press SPACE to try again</span>
+    </div>
+
+    <script src="snake.js"></script>
+</body>
+</html>

@@ -1,0 +1,707 @@
+*,
+::before,
+::after 
+{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    display: none;
+  }
+  
+.background-img {
+    background-image: url('./img/background.jpg');
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+}
+
+.background-frontdrop {
+    position: absolute;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(44, 81, 155, 0.9) 0%, rgba(20, 40, 80, 0.97) 100%);
+    height: 100vh;
+    width: 100vw;
+}
+
+
+
+.rick {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: block;
+    font-size: 50px;
+
+    background-image: url('./img/patrick-ohm.svg');
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 240px;
+
+}
+
+
+
+.buttons {
+    position: absolute;
+    display: flex;
+    left: 50%;
+    top: 420px;
+    transform: translateX(-50%);
+
+}
+
+
+
+
+.btn{
+    height: 40px;
+    width: 180px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 5px;
+    margin: 10px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 6px;
+    position: relative;
+    background: none;
+    display: block;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.btn::before {
+    border-radius: 5px;
+    background:  rgba(20, 40, 80, 0.9);
+    content: '';
+    position: absolute;
+    z-index: -2;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.btn::after {
+    -webkit-transition: width 0.3s ease-out, left 0.3 ease-out;
+	-moz-transition: width 0.3s ease-out, left 0.3s ease-out;
+    -o-transition: width 0.3s ease-out, left 0.3s ease-out;
+	transition: width 0.3s ease-out, left 0.3s ease-out;   
+
+    border-radius: 5px;
+    background-color: #ff7420;
+    content: '';
+    position: absolute;
+    z-index: -1;
+
+    height: 100%;
+    left: 50%;
+    top: 0;
+    width: 0;
+    
+}
+
+.btn:hover:after {
+    width: 100%;
+    left: 0;
+
+}
+
+
+
+.frame {
+    position: absolute;
+    width: 94vw;
+    height: 94vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
+}
+
+.line {
+    position: absolute;
+    height: 1px;
+    width: 70vw;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0) 1.78%, #FFFFFF 48.33%, rgba(255, 255, 255, 0) 100%);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 385px;
+}
+
+.circle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 120px;
+}
+
+.triangle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 550px;
+}
+
+
+
+/* -------- Responsive ---------*/
+
+@media (max-width: 850px) { 
+    .buttons {
+        flex-direction: column;
+        
+    }
+
+    .buttons > div {
+        width: 300px;
+    }
+
+    .triangle {
+        top: 720px;
+    }
+}
+
+@media (max-height: 950px) and (max-width: 850px){
+    .triangle {
+        display: none;
+    }
+
+    .circle {
+        display: none;
+    }
+
+    .rick {
+        background-position-y: 200px;
+    }
+
+    .line {
+        top: 345px;
+    }
+
+    .buttons {
+        top: 380px;
+    }
+}
+
+@media (max-width: 630px) {
+    .rick {
+        background-size: 90%;
+        background-position-y:10%;
+    }
+
+    .line {
+        top:25%;
+    }
+
+    .buttons {
+        top: 35%;
+        width: 80vw;
+    }
+
+    .buttons > div {
+        width: 90%;
+        margin: 5px auto;
+
+    }
+}
+
+@media (max-width: 420px) {
+    .buttons > div {
+        width: 100%;
+    }
+}
+
+
+/* ------------- PROJECT MODEL ------------*/
+
+.model {
+    z-index: 40;
+    display: none;
+    opacity: 0.0;
+}
+
+.model-backdrop {
+    position: fixed;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.model-body {
+    position: absolute;
+    left: 50%;
+    top:0;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 94%;
+    max-width: 1000px;
+    background: white;
+}
+
+.model-bg-img {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url('./img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.model-frontdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(44, 81, 155, 0.9) 0%, rgba(20, 40, 80, 0.97) 100%);
+}
+
+.model-content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    color: white;
+    overflow: scroll;
+}
+
+.model-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 40px;
+    font-weight: 100;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    transition: all 0.3s;
+    line-height: 40px;
+    text-align: center;
+}
+
+.model-close-btn:hover {
+    font-size: 55px;
+}
+
+.model-content > h1 {
+    text-align: center;
+    letter-spacing: 0.1em;
+    font-size: 36px;
+    line-height: 120px;
+    text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+    .model-content > h1 {
+        font-size: 26px;
+        line-height: 60px;
+    }
+
+    .model-close-btn {
+        top: 7px;
+    }
+}
+
+.project_img {
+    width: 200px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.project-cards {
+    margin-top: 20px;
+}
+
+.project_card {
+    display: flex;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.project_dis {
+    background:  rgba(20, 40, 80, 0.5);
+    width: 74%;
+    margin-left: 3%;
+    padding: 10px;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.5);
+}
+
+.project_dis h2 {
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+}
+
+.project_dis p {
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.project-cards:last-child {
+    margin-bottom: 40px;
+}
+
+.card_image_container {
+    position: relative;
+    
+}
+
+
+
+.img_frontdrop {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    transition: all .2s linear;
+    color: rgba(255, 255, 255, 0.0)
+}
+
+
+.img_frontdrop:hover {
+    background-color: rgba(0, 0, 0, 0.95);
+    color: rgba(255, 255, 255, 1.0);
+}
+
+
+@media (max-width: 600px) {
+    .project_card {
+        flex-direction: column;
+    }
+
+    .project_dis {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .project_img {
+        width: 100%;
+    }
+
+    .img_frontdrop {
+        width: 100%;
+        height: 99%;
+        cursor: default;
+        pointer-events: none;
+    }
+
+}
+
+
+
+/* ----------- Contact model ---------------- */
+
+
+
+.contact_form {
+    width: 560px;
+    height: 520px;
+    margin: 0 auto;
+    position: relative;
+    background:  rgba(20, 40, 80, 0.5);
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.5);
+}
+
+.contact_form h2 {
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+    padding-top: 30px;
+    padding-left: 30px; 
+}
+
+
+.contact_form input, .contact_form textarea {
+    background:  rgba(20, 40, 80, 0.5);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 5px;
+}
+
+.contact_form input:focus, .contact_form textarea:focus {
+    outline: none;
+}
+
+.contact_form input {
+    height: 40px;
+    width: 235px;
+    position: absolute;
+    top: 80px;
+    padding-left: 15px;
+    color: white;
+}
+
+.contact_form input::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.contact_form .subject {
+    width: 500px;
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    transform: translateX(-50%);
+}
+
+.contact_form .name {
+    left: 30px;
+}
+
+.contact_form .email {
+    left: 295px;
+}
+
+.contact_form .message {
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    top: 220px;
+    left: 30px;
+    resize: none;
+    padding: 15px;
+    color: white;
+}
+
+.contact_form .sub_btn {
+    position: absolute;
+    top: 450px;
+    right: 30px;
+    color: white;
+    background: #142850;
+    border: none;
+    width: 150px;
+    height: 35px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+    transition: all 0.2s linear;
+}
+
+.contact_form .sub_btn:hover {
+    background-color: #ff7420;
+}
+
+
+@media (max-width: 600px) {
+    .contact_form {
+        width: 100%;
+        height: 590px;
+    }
+
+    .contact_form .subject {
+        max-width: 95%;
+        top: 220px;
+    }
+
+    .contact_form .name {
+        width: 500px;
+        max-width: 95%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .contact_form .email {
+        top: 150px;
+        width: 500px;
+        max-width: 95%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .contact_form .message {
+        top: 290px;
+        width: 500px;
+        max-width: 95%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .contact_form .sub_btn {
+        top: 520px;
+        right: 5%;
+    }
+}
+
+@media (max-width: 550px) {
+    .contact_form .sub_btn {
+        right: 2.5%;
+    }
+
+    .contact_form h2 {
+        padding-left: 2.5%;
+    }
+ }
+
+
+
+
+
+/* ----------- Skills model ---------------- */
+
+
+
+
+.skill_cards {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.skill_card {
+    background:  rgba(20, 40, 80, 0.5);
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.5);
+    margin: 15px;
+    width: 250px;
+    height: 400px;
+}
+
+.skill_card h2 {
+    text-align: center;
+    font-weight: 300;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    padding: 15px;
+    background:  rgba(20, 40, 80, 0.5);
+}
+
+.skill_card ul {
+    list-style: none;
+    margin-left: 30px;
+    font-weight: 300;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    line-height: 28px;
+    margin-top: 15px;
+}
+
+@media (max-width: 600px) {
+
+    .skill_card {
+        margin: 5px;
+        width: 200px;
+    }
+
+    @media (max-width: 400px) {
+        .skill_card {
+            width: 170px;
+        }
+
+        .skill_card ul {
+            margin: 15 auto;
+        }
+    }
+
+}
+
+
+/* ----------- About model ---------------- */
+
+.about_card {
+    
+    margin: 15px auto;
+    padding: 15px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    font-size: 22px;
+    width: 80%;
+    line-height: 1.3em;
+
+}
+
+.about_card.first {
+    width: 50%;
+    margin-left: 10%;
+}
+
+.profilePic {
+    width: 400px;
+    float: right;
+    margin: 0 0px 10px 15px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+@media (max-width: 900px) {
+    .about_card {
+        font-size: 20px;
+        width: 95%;
+    }
+
+    .profilePic {
+        width: 350px;
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .about_card {
+        font-size: 18px;
+        margin-top: 0;
+    }
+
+    .profilePic {
+        width: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .about_card p {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .profilePic {
+        width: 270px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .profilePic {
+        width: 100%;
+        float: none;
+        margin: 0;
+    }
+}
+
+
+/* Model animation */
+
+
+.transform {
+    -webkit-transition: all 0.6s;  
+    -moz-transition: all 0.6s;  
+    -o-transition: all 0.6s;  
+    -ms-transition: all 0.6s;  
+    transition: all 0.6s;
+}
+
+.model-active {
+    opacity: 1;
+}

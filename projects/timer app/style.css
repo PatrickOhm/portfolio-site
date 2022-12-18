@@ -1,0 +1,654 @@
+*,
+::before,
+::after {
+    font-family: 'Roboto', sans-serif; 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+    white-space: nowrap;
+}
+
+header {
+    background: linear-gradient(180deg, #2DC0BE 0%, #2DC0BE 100%);
+    color: white;
+    height: 130px;
+    width: calc(100vw - 130px);
+    position: absolute;
+    right: 0;
+
+    font-family: Righteous;
+    font-size: 60px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+
+    text-align: center;
+    line-height: 124px;
+}
+
+nav {
+    background-color: #0F0A3C;
+    width: 130px;
+    height: 100vh;
+    position: absolute;
+    box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.25);
+}
+
+.main-nav img {
+    width: 76px;
+    
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+
+.main-nav li  {
+    padding-top: 10px;
+    border-bottom: 1px solid #2DC0BE;
+    height: 130px;
+    cursor: pointer;
+    
+    
+    
+}
+
+.main-nav li {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.main-nav li:hover {
+    background-color: #0A0627;
+}
+
+
+.main-nav li a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    margin: 0 auto;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-weight: 100;
+}
+
+#timer {
+    width: 60px;
+}
+
+#Uhrzeit {
+    margin-top: 7px;
+}
+
+#Stoppuhr {
+    margin-top: -4px;
+}
+
+#Pomodoro {
+    margin-top: 7px;
+}
+
+.timer {
+    position: absolute;
+}
+
+.icon {
+    width: 20px;
+}
+
+
+
+.time {
+    position: absolute;
+    width: 305px;
+    font-weight: 400;
+    font-size: 120px;
+    color: #0F0A3C;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    left: calc(50% + 65px);
+    top:200px;
+    transform: translate(-50%);
+}
+
+.pause {
+    position: absolute;
+    font-weight: 400;
+    color: #0F0A3C;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    left: calc(50% + 65px);
+    top:165px;
+    transform: translate(-50%);
+    font-size: 30px;
+    display: none;
+}
+
+body {
+    position: relative;
+}
+
+.buttons {
+    color: white;
+    position: absolute;
+    display: flex;
+    left: calc(50% + 61px);
+    top:335px;
+    transform: translate(-50%);
+    font-size: 20px;
+    font-weight: 100;
+    
+}
+
+.start, .reset, .stopp, .edit {
+    background: #07456F;
+    padding: .4em 1.4em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    position: relative;
+
+}
+
+.start {
+    margin-right: 3px;
+
+}
+
+.stopp {
+    margin-right: 3px; 
+    display: none;
+    padding: 0.4em 1.2em;
+}
+.reset {
+    margin-left: 3px;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+.reset_icon {
+    width: 22px;
+    margin-bottom: -3px;
+}
+
+.start_icon {
+    margin-bottom: -3px;
+}
+
+.stopp_icon {
+    margin-bottom: -3px;
+}
+
+
+
+.start:hover, .reset:hover, .stopp:hover {
+    background-color: #053352;
+}
+
+
+.settings {
+    display: none;
+}
+
+.model-backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.model-body {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 25px;
+    font-weight: 300;
+
+ 
+
+}
+
+.model-body > h1 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 22px;
+    margin-left: 15px;
+}
+
+.model-body > form {
+    margin-left: 15px;
+    margin-top: 30px;
+    position: relative;
+}
+
+.model-body > form > input {
+    width: 77px;
+    height: 29px;
+    border: none;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25), 0px 0px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    right: 15px; 
+    text-align: center;
+    font-size: 18px;
+
+}
+
+.model-body > form > input:focus {
+    outline: none;
+}
+
+.model-body > form > label {
+     margin-top: 20px;
+} 
+
+
+.model-body > button {
+    width: 180px;
+    height: 40px;
+    color: white;
+    border: none;
+    font-size: 25px;
+    font-weight: 300;
+    cursor: pointer;
+    background: #07456F;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25), 0px 0px 4px rgba(0, 0, 0, 0.25);
+
+
+    position: absolute;
+    bottom: 35px;
+}
+
+.model-body > button:focus {
+    outline: none;
+}
+
+.model-body > button:hover {
+    background: #053352;
+}
+
+.close {
+    right: 15px;
+}
+
+.save {
+    left: 15px;
+}
+
+.settings_icon {
+    position: absolute;
+    right: 10px;
+    top: 140px;
+    width: 30px;
+    height: 30px;
+    background-image: url('./Icons/settings.png');
+    background-size: cover;
+    cursor: pointer;
+}
+
+.alert {
+    position: absolute;
+    font-size: 14px;
+    color: red;
+    left: 15px;
+    display: none;
+}
+
+.pomodoro_duration_alert {
+    top: 117px;
+}
+
+.shortPause_duration_alert {
+    top: 175px;
+}
+
+.longPause_duration_alert {
+    top: 235px;
+}
+
+.iterations_total_alert {
+    top: 294px;
+}
+
+
+
+/* ----------------- Uhrzeit ---------------- */
+
+.uhrzeit {
+    position: absolute;
+    font-weight: 400;
+    font-size: 120px;
+    color: #0F0A3C;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    left: calc(50% + 65px);
+    top:200px;
+    transform: translate(-50%);
+}
+
+.date {
+    position: absolute;
+    font-weight: 300;
+    font-size: 28px;
+    color: #0F0A3C;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    left: calc(50% + 65px);
+    top:325px;
+    transform: translate(-50%);
+    letter-spacing: 4px;
+    white-space: nowrap;
+}
+
+
+/* ----------------- Stoppuhr ---------------- */
+
+
+#mSekunden {
+    font-size: 60px;
+}
+
+.stoppuhr_btn .start, .stoppuhr_btn .reset, .stoppuhr_btn .stopp {
+    padding: 0.4em 2.5em;
+
+}
+
+.stoppuhr_btn .stopp {
+    padding: 0.4em 2.28em;
+}
+
+.buttons.stoppuhr_btn {
+    left: calc(50% + 68px);
+}
+
+
+
+/* ------------------ Timer --------------------*/
+
+.buttons.timer_btn {
+    left: calc(50% + 65px);
+}
+
+.buttons.timer_btn > div{
+    width: 150px;
+    padding: 0;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+
+}
+
+
+.buttons.timer_btn div:last-child {
+    background-color: red;
+}
+
+.buttons.timer_btn div:last-child:hover {
+    background-color: rgb(199, 0, 0);
+}
+
+.timer_info_display {
+    position: absolute;
+    width: 430px;
+    left: calc(50% + 75px);
+    top: 195px;
+    transform: translate(-50%);
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: 4px;
+    font-weight: 300;
+}
+
+
+.settings.timer_settings {
+    display: none;
+}
+
+
+.settings.settings.timer_settings .model-body {
+    height: 350px;
+
+}
+
+.settings-header h1 {
+    background-color: #2DC0BE;
+    color: white;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 60px;
+    text-align: center;
+}
+
+.edit {
+    margin-left:6px; 
+}
+
+.timer_stunden_alert.alert,
+.timer_minuten_alert.alert,
+.timer_sekunden_alert.alert
+{
+    display: none;
+    position: absolute;
+}
+
+.timer_stunden_alert.alert {
+    top: 110px;
+}
+
+.timer_minuten_alert.alert {
+    top: 168px;
+}
+
+.timer_sekunden_alert.alert {
+    top: 226px;
+}
+
+
+
+/* ----------------------------------------------------------------*/
+/* ----------------------WECKER------------------------------------*/
+/* ----------------------------------------------------------------*/
+
+
+.buttons.wecker-button div{
+    height: 43px;
+    width: 270px;
+    text-align: center;
+    line-height: 43px;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 2px;
+    margin-left: 10px;
+}
+
+.wecker-edit-backdrop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.wecker-edit-model {
+    position: fixed;
+    width: 300px;
+    height: 265px;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.select-btn {
+    display: inline-block;
+    height: 30px;
+    width: 40px;
+    line-height: 29px;
+    background-color: lightgray;
+    text-align: center;
+}
+
+.select-btn:hover {
+    background-color: darkgray;
+}
+
+.wecker-edit-model select {
+    width: 77px;
+    height: 29px;
+    border: none;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    text-align-last: center;
+    font-size: 18px;
+    margin: 0;
+
+    position: relative;
+    bottom:2px;
+}
+
+.wecker-edit-model select:focus {
+    outline: none;
+}
+
+.wecker-edit-model label {
+    position: absolute;
+    left: 20px;
+}
+
+.h-wrapper, .min-wrapper {
+    position: relative;
+    left: 115px;
+    top: 30px;
+}
+
+.plus {
+    position: relative;
+    right: 4px;
+    bottom: 1px;
+}
+
+.minus {
+    position: relative;
+    left: 4px;
+    bottom: 1px;
+}
+
+#wecker-edit-h-label {
+    top: 90px;
+}
+
+#wecker-edit-min-label {
+    top: 150px;
+}
+
+.wecker-edit-save-btn {
+    background-color: #07456F;
+    color: white;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 260px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 200px;
+    font-weight: 100;
+    cursor: pointer;
+}
+
+.wecker-edit-save-btn:hover {
+    background: #053352;
+}
+
+
+.wecker-edit {
+    display: none;
+}
+
+
+.alarm-model-backdrop {
+    position: fixed;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+.alarm-model-body {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 400px;
+    height: 300px;
+}
+
+.alarm-model-body h1:first-child {
+    background: red;
+}
+
+#alarm-msg {
+    font-weight: 300;
+    position: absolute;
+    display: inline;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+.alarm-off-btn {
+    background: #2DC0BE;
+    position: absolute;
+    color: white;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    bottom: 15px;
+    left: 50%;
+    transform: translate(-50%);
+    cursor: pointer;
+}
+
+.alarm-off-btn:hover {
+    background: #249E9C;
+}
+
+.alarm-model {
+    display: none;
+}
+
+.wecker-uhrzeit {
+    font-size: 25px;
+    top: 170px;
+    letter-spacing: 10px;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+
+.model-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 60px;
+    font-weight: 100;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    line-height: 40px;
+}

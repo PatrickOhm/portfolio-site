@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <Header>POMODORO TIMER
+            <div onclick="location.href = '../../index.html';" class="model-close-btn">&times;</div>
+    </Header>
+    
+    <div class="settings_icon"></div>
+    
+    <nav>
+        <ul class="main-nav">
+            <li><img id="Uhrzeit" src="./Icons/Uhrzeit.svg"><a href="uhr.html">Uhrzeit</a></li>
+            <li><img id="Stoppuhr" src="./Icons/stoppUhr_white.png"><a href="stopp.html">Stoppuhr</a></li>
+            <li><img src="./Icons/wecker_icon.png"><a href="wecker.html">Wecker</a></li>
+            <li><img id="Pomodoro" src="./Icons/Pomodoro_icon.png"><a href="index.html">Pomodoro</a></li>
+            <li><img id="timer" src="./Icons/Timer_icon.png"><a href="timer.html">Timer</a></li>
+        </ul>
+    </nav>
+
+        <div class="pause">Pause!</div>
+        <div class="time"><span id="min">25</span>:<span id="sec">00</span>
+        </div>
+        <div class="buttons">
+            <div class="start">
+                <img class="icon start_icon" src="./Icons/play.png" alt="">
+                Start</div>
+
+            <div class="stopp">
+                    <img class="icon stopp_icon" src="./Icons/stopp_icon.png" alt="">
+                    Stopp</div>
+
+            <div class="reset">
+                <img class="icon reset_icon" src="./Icons/reset_icon_white.png">
+                Reset</div>
+        </div>
+
+
+        <div class="settings">
+            <div class="model-backdrop"></div>
+            <div class="model-body">
+                    <span class="settings-header"><h1>Einstellungen</h1></span>
+                    <span class="pomodoro_duration_alert alert">Gib einen Wert größer Null ein!</span>
+                    <span class="shortPause_duration_alert alert">Gib einen Wert größer Null ein!</span>
+                    <span class="longPause_duration_alert alert">Gib einen Wert größer Null ein!</span>
+                    <span class="iterations_total_alert alert">Gib einen Wert größer Null ein!</span>
+                    <form>
+                        <label for="pDauer">Pomodoro-Dauer:</label>
+                        <input id="Pomodoro_duration" type="number" name="pDauer" value="25"><br><br>
+        
+                        <label for="shortPause">kurze Pause:</label>
+                        <input id="shortPause_duration" type="number" name="shortPause" value="5"><br><br>
+        
+                        <label for="longPause">lange Pause:</label>
+                        <input id="longPause_duration" type="number" name="longPause" value="30"><br><br>
+        
+                        <label for="duration">Wdh. bis lange Pause:</label>
+                        <input id="iterations_total" type="number" name="durations" value="4"><br>
+                    </form>
+                    <button class="save">Anwenden</button>
+                    <button class="close">Schließen</button>
+            </div>
+        
+        </div>
+
+        <script src="script.js"></script>
+</body>
+</html>
