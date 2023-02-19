@@ -85,6 +85,7 @@ const timerDiv = document.querySelector('.timer_img_div');
 const memoryDiv = document.querySelector('.memory_div');
 const SnakeDiv = document.querySelector('.CrazySnakeDiv');
 const budgetDiv = document.querySelector('.budgetDiv');
+const timeTrackerDiv = document.querySelector('.timeTrackerDiv');
 
 SnakeDiv.onclick = function () {
     if (window.innerWidth > 600) {
@@ -113,6 +114,12 @@ memoryDiv.onclick = function () {
 budgetDiv.onclick = function () {
     if (window.innerWidth > 600) {
         location.href = 'https://budgets-buddy.netlify.app';
+    }
+}
+
+timeTrackerDiv.onclick = function () {
+    if (window.innerWidth > 600) {
+        location.href = 'https://time-tracks.netlify.app';
     }
 }
 
