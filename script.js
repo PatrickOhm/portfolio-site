@@ -119,7 +119,7 @@ budgetDiv.onclick = function () {
 
 timeTrackerDiv.onclick = function () {
     if (window.innerWidth > 600) {
-        location.href = 'https://time-tracks.netlify.app';
+        location.href = 'https://patricks-time-tracker.netlify.app/';
     }
 }
 
