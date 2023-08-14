@@ -86,6 +86,7 @@ const memoryDiv = document.querySelector('.memory_div');
 const SnakeDiv = document.querySelector('.CrazySnakeDiv');
 const budgetDiv = document.querySelector('.budgetDiv');
 const timeTrackerDiv = document.querySelector('.timeTrackerDiv');
+const listsDnDDiv = document.querySelector('.listsDnDDiv');
 
 SnakeDiv.onclick = function () {
     if (window.innerWidth > 600) {
@@ -123,8 +124,21 @@ timeTrackerDiv.onclick = function () {
     }
 }
 
+listsDnDDiv.onclick = function () {
+    if (window.innerWidth > 600) {
+        location.href = 'https://lists-dnd.netlify.app';
+    }
+}
 
-if (lastPage.includes('index') || lastPage.includes('%20platformer') || lastPage.includes('timer') || lastPage.includes('memorycards') || lastPage.includes('snake')) {
+
+
+
+if (lastPage.includes('index') ||
+    lastPage.includes('%20platformer') ||
+    lastPage.includes('timer') ||
+    lastPage.includes('memorycards') ||
+    lastPage.includes('snake') ||
+    lastPage.includes('app')) {
     modelProject.style.display = 'block';
     modelAnimationActive(modelProject);
 }
