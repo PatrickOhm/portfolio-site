@@ -87,6 +87,7 @@ const SnakeDiv = document.querySelector('.CrazySnakeDiv');
 const budgetDiv = document.querySelector('.budgetDiv');
 const timeTrackerDiv = document.querySelector('.timeTrackerDiv');
 const listsDnDDiv = document.querySelector('.listsDnDDiv');
+const laddersGameDiv = document.querySelector('.laddersGameDiv');
 
 SnakeDiv.onclick = function () {
     if (window.innerWidth > 600) {
@@ -127,6 +128,12 @@ timeTrackerDiv.onclick = function () {
 listsDnDDiv.onclick = function () {
     if (window.innerWidth > 600) {
         location.href = 'https://lists-dnd.netlify.app';
+    }
+}
+
+laddersGameDiv.onclick = function () {
+    if (window.innerWidth > 600) {
+        location.href = 'https://ladders-game.netlify.app/';
     }
 }
 
